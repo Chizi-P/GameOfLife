@@ -6,4 +6,6 @@
 
 之後有時間弄一下自定義標記。
 
-[Game of life](https://github.com/Chizi-P/GameOfLife/blob/master/GameOfLife/Game_of_life.js)
+[展示網址](https://chizi-p.github.io/GameOfLife/)
+
+[js代碼](https://github.com/Chizi-P/GameOfLife/blob/master/GameOfLife/Game_of_life.js)
