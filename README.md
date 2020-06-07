@@ -1,4 +1,4 @@
-# JavaScript
+# Game Of Life
 
 ### 康威生命遊戲
 
@@ -6,4 +6,4 @@
 
 之後有時間弄一下自定義標記。
 
-[Game of life](https://github.com/Chizi-P/JavaScript/blob/master/GameOfLife/Game_of_life.js)
+[Game of life](https://github.com/Chizi-P/GameOfLife/blob/master/GameOfLife/Game_of_life.js)
