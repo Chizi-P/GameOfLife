@@ -90,7 +90,7 @@ function run(delay, times, isDisplay = false) {
     timer = setInterval(() => {
         clearColoringMark();
         timeForward();
-        coloringMark();
+        baseColoringMark();
         if (isDisplay) {
             display();
         }
@@ -248,29 +248,38 @@ const movingState = [
     ]
 ];
 
-function coloringMark() {
-    function findSameAsStateMap(stateMap, constant) {
+// a3d is array of 3d.
+function coloringMark(a3d, mark, isRotate = false) {
+    function findSameAsStateMap(stateMap, mark) {
         stateMap.forEach(state => {
             for (let i = 0; i < space.length - state.length; i++) {
                 for (let j = 0; j < space[0].length - state[0].length; j++) {
                     var sample = getPartOfMatrix(space, j, i, state[0].length, state.length);
                     if(isSame(state, sample)) {
-                        matrixAddMatrix(space, state, constant, j, i, true);
+                        matrixAddMatrix(space, state, mark, j, i, true);
                     }
                 }
             }
         });
     }
-    function fourDirections(stateMap, constant) {
-        findSameAsStateMap(stateMap, constant);
-        findSameAsStateMap(reverseAlongXAxis(stateMap), constant);
-        findSameAsStateMap(reverseAlongYAxis(stateMap), constant);
-        findSameAsStateMap(reverseAlongXAxis(stateMap), constant);
+    function fourDirections(stateMap, mark) {
+        findSameAsStateMap(stateMap, mark);
+        findSameAsStateMap(reverseAlongXAxis(stateMap), mark);
+        findSameAsStateMap(reverseAlongYAxis(stateMap), mark);
+        findSameAsStateMap(reverseAlongXAxis(stateMap), mark);
     }
-    findSameAsStateMap(stableState_symmetry, 1);
-    fourDirections(stableState, 1);
-    findSameAsStateMap(cycleState, 2);
-    fourDirections(movingState, 3);
+    if (isRotate == true) {
+        fourDirections(a3d, mark);
+    } else {
+        findSameAsStateMap(a3d, mark);
+    }
+}
+
+function baseColoringMark() {
+    coloringMark(stableState_symmetry, 1);
+    coloringMark(stableState, 1, true);
+    coloringMark(cycleState, 2);
+    coloringMark(movingState, true, 3);
 }
 
 function clearColoringMark() {
