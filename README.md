@@ -28,7 +28,7 @@ function bigBang(width, height);
 
 全域變數 `spaceH` 空間高度 = `height`
 
-
+---
 
 #### 生命起源
 
@@ -38,7 +38,7 @@ function createLife(x, y);
 
 `x` , `y` 在生成的直角座標空間中（x, y）位置創造生命
 
-
+---
 
 #### 遍地開花
 
@@ -50,7 +50,7 @@ function randomCreateLife(density, isClear = true);
 
 `isClear` 是否清除之前的所有生命（默認清除全部生命）
 
-
+---
 
 #### 殺生
 
@@ -60,7 +60,7 @@ function killLife(x, y);
 
 殺死（x, y）位置的生命
 
-
+---
 
 #### 時間流逝
 
@@ -84,7 +84,7 @@ function run(delay, times, isDisplay = false);
 
 全域變數 `isRun` = `true`
 
-
+---
 
 #### 時間停止
 
@@ -96,7 +96,7 @@ function stop();
 
 全域變數 `isRun` = `false`
 
-
+---
 
 #### Console 顯示
 
@@ -106,7 +106,7 @@ function display();
 
 在console中顯示現在的空間樣貌。
 
-
+---
 
 #### 基本著色標記
 
@@ -118,7 +118,7 @@ function baseColoringMark();
 
 ##### 暫時不全面
 
-
+---
 
 #### 著色標記
 
