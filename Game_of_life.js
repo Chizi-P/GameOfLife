@@ -249,7 +249,7 @@ const movingState = [
 ];
 
 // a3d is array of 3d.
-function coloringMark(a3d, mark, isRotate = false) {
+function coloringMark(stateMap, mark, isRotate = false) {
     function findSameAsStateMap(stateMap, mark) {
         stateMap.forEach(state => {
             for (let i = 0; i < space.length - state.length; i++) {
@@ -269,9 +269,9 @@ function coloringMark(a3d, mark, isRotate = false) {
         findSameAsStateMap(reverseAlongXAxis(stateMap), mark);
     }
     if (isRotate == true) {
-        fourDirections(a3d, mark);
+        fourDirections(stateMap, mark);
     } else {
-        findSameAsStateMap(a3d, mark);
+        findSameAsStateMap(stateMap, mark);
     }
 }
 
